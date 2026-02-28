@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Instalador v2/Instalador v2.vdproj" Type="Installer" />
+  <Project Path="Pecuaria Digital/Pecuaria Digital.csproj" />
+</Solution>
