@@ -806,7 +806,7 @@
             // 
             lblAjudaTitulo.AutoSize = true;
             lblAjudaTitulo.Dock = DockStyle.Left;
-            lblAjudaTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            lblAjudaTitulo.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             lblAjudaTitulo.Location = new Point(3, 19);
             lblAjudaTitulo.Name = "lblAjudaTitulo";
             lblAjudaTitulo.Size = new Size(131, 15);
@@ -1342,7 +1342,7 @@
             // lblMediaD0
             // 
             lblMediaD0.AutoSize = true;
-            lblMediaD0.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblMediaD0.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblMediaD0.Location = new Point(20, 23);
             lblMediaD0.Name = "lblMediaD0";
             lblMediaD0.Size = new Size(52, 17);
@@ -1352,7 +1352,7 @@
             // lblMediaD8
             // 
             lblMediaD8.AutoSize = true;
-            lblMediaD8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblMediaD8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblMediaD8.Location = new Point(20, 57);
             lblMediaD8.Name = "lblMediaD8";
             lblMediaD8.Size = new Size(52, 17);
@@ -1362,7 +1362,7 @@
             // lblMediaIATF
             // 
             lblMediaIATF.AutoSize = true;
-            lblMediaIATF.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblMediaIATF.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblMediaIATF.Location = new Point(241, 23);
             lblMediaIATF.Name = "lblMediaIATF";
             lblMediaIATF.Size = new Size(52, 17);
@@ -1372,7 +1372,7 @@
             // lblMediaDG
             // 
             lblMediaDG.AutoSize = true;
-            lblMediaDG.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
+            lblMediaDG.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             lblMediaDG.Location = new Point(241, 57);
             lblMediaDG.Name = "lblMediaDG";
             lblMediaDG.Size = new Size(52, 17);

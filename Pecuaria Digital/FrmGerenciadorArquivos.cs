@@ -3,6 +3,7 @@ using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
+using Pecuaria_Digital.Constants;
 
 namespace Pecuaria_Digital
 {
@@ -31,7 +32,7 @@ namespace Pecuaria_Digital
             this.MinimizeBox = false;
             this.Text = "Gerenciador de Tabelas";
 
-            _arquivoConfig = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "config_pasta.txt");
+            _arquivoConfig = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, AppSettings.NomeArquivoConfig);
             string pastaSalva = LerConfiguracaoDoDisco();
 
             if (!string.IsNullOrWhiteSpace(pastaSalva) && Directory.Exists(pastaSalva))
@@ -129,7 +130,7 @@ namespace Pecuaria_Digital
 
         private void btnNovo_Click_1(object sender, EventArgs e)
         {
-            string nomeSugestao = "Fazenda_" + new Random().Next(100, 999);
+            string nomeSugestao = $"{AppSettings.PrefixoNomeFazenda}{new Random().Next(100, 999)}";
 
             using (Form prompt = new Form())
             {

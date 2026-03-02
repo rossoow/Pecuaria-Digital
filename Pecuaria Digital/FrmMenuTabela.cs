@@ -73,6 +73,7 @@ namespace Pecuaria_Digital
         public FrmMenuTabela(ProtocoloViewModel viewModel)
         {
             _viewModel = viewModel;
+            
             InitializeComponent();
             _cbResultadoDG.SelectedIndex = 0;
         }
@@ -130,7 +131,23 @@ namespace Pecuaria_Digital
 
         private void inserir_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(_numero.Text)) { MessageBox.Show("Número obrigatório."); return; }
+            var (valido, mensagem) = ValidacaoService.ValidarInsercaoAnimal(_numero.Text, _categoria.Text, _raca.Text);
+            if (!valido)
+            {
+                MessageBox.Show(mensagem, "Atenção",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Valida ECC se preenchido
+            var (eccValido, eccMensagem) = ValidacaoService.ValidarEcc(_ecc.Text);
+            if (!eccValido)
+            {
+                MessageBox.Show(eccMensagem, "ECC Inválido",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                _ecc.Focus();
+                return;
+            }
 
             string idDigitado = _numero.Text.Trim().ToUpper();
             DataGridViewRow linhaAlvo = null;
