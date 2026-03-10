@@ -151,21 +151,71 @@ namespace Pecuaria_Digital
 
             string idDigitado = _numero.Text.Trim().ToUpper();
             DataGridViewRow linhaAlvo = null;
-            bool ehNovaLinha = true;
+            bool ehNovaLinha = false;
 
-            // 1. Procura se já existe
+            // 1. Busca TODAS as linhas que têm esse mesmo brinco
+            List<DataGridViewRow> linhasEncontradas = new List<DataGridViewRow>();
             foreach (DataGridViewRow row in tabela.Rows)
             {
+                if (row.IsNewRow) continue;
                 string idTabela = row.Cells[Colunas.Id].Value?.ToString().Trim().ToUpper() ?? "";
                 if (idTabela == idDigitado)
                 {
-                    linhaAlvo = row;
-                    ehNovaLinha = false;
-                    break;
+                    linhasEncontradas.Add(row);
                 }
             }
 
-            // 2. Se não existe, cria nova
+            // 2. Lógica de Decisão (D0 vs D8 em diante)
+            if (linhasEncontradas.Count == 0)
+            {
+                // O brinco não existe na tabela, sempre cria um novo
+                ehNovaLinha = true;
+            }
+            else
+            {
+                // O brinco já existe! Vamos ver em qual etapa estamos:
+                if (_viewModel.EstagioAtual == EstagioProtocolo.D0_Inicio)
+                {
+                    // No D0: Pergunta se quer duplicar ou atualizar
+                    var resp = MessageBox.Show($"O brinco '{idDigitado}' já existe na tabela.\n\nDeseja adicionar um NOVO animal com este mesmo brinco?\n\n[SIM] = Cria um brinco repetido\n[NÃO] = Atualiza os dados do existente", "Brinco Repetido", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+
+                    if (resp == DialogResult.Cancel) return; // Cancela a inserção
+
+                    if (resp == DialogResult.Yes)
+                    {
+                        ehNovaLinha = true; // Permite duplicar
+                    }
+                    else
+                    {
+                        // Quer atualizar. Se tiver mais de um, abre a janela de escolha
+                        if (linhasEncontradas.Count > 1)
+                        {
+                            linhaAlvo = EscolherLinhaDuplicada(linhasEncontradas);
+                            if (linhaAlvo == null) return; // Fechou a janela sem escolher
+                        }
+                        else
+                        {
+                            linhaAlvo = linhasEncontradas[0];
+                        }
+                    }
+                }
+                else
+                {
+                    // Do D8 em diante: Nunca duplica. Apenas atualiza.
+                    if (linhasEncontradas.Count > 1)
+                    {
+                        // Abre a janela para ele escolher QUAL das vacas repetidas ele está manejando agora
+                        linhaAlvo = EscolherLinhaDuplicada(linhasEncontradas);
+                        if (linhaAlvo == null) return; // Fechou a janela sem escolher
+                    }
+                    else
+                    {
+                        linhaAlvo = linhasEncontradas[0];
+                    }
+                }
+            }
+
+            // 3. Se for nova linha, cria na tabela
             if (ehNovaLinha)
             {
                 int index = tabela.Rows.Add();
@@ -1826,7 +1876,68 @@ namespace Pecuaria_Digital
         }
         #endregion
 
-        
+        private DataGridViewRow EscolherLinhaDuplicada(List<DataGridViewRow> linhas)
+        {
+            using (Form formEscolha = new Form())
+            {
+                formEscolha.Text = "Animais Duplicados";
+                formEscolha.Size = new Size(550, 300); // Janela um pouco mais larga
+                formEscolha.StartPosition = FormStartPosition.CenterParent;
+                formEscolha.FormBorderStyle = FormBorderStyle.FixedDialog;
+                formEscolha.MaximizeBox = false;
+                formEscolha.MinimizeBox = false;
+
+                // 1. Cria o Botão (Fundo)
+                Button btnOk = new Button();
+                btnOk.Text = "Confirmar Escolha";
+                btnOk.Dock = DockStyle.Bottom;
+                btnOk.Height = 45;
+                btnOk.BackColor = Color.LightGreen;
+                btnOk.Font = new Font("Segoe UI", 10, FontStyle.Bold);
+                btnOk.FlatStyle = FlatStyle.Flat;
+
+                // 2. Cria o Texto (Topo)
+                Label lbl = new Label();
+                lbl.Text = "Foram encontrados múltiplos animais com este mesmo brinco.\nSelecione na lista abaixo qual você deseja atualizar agora:";
+                lbl.Dock = DockStyle.Top;
+                lbl.Height = 50;
+                lbl.TextAlign = ContentAlignment.MiddleCenter;
+                lbl.Font = new Font("Segoe UI", 9, FontStyle.Bold);
+
+                // 3. Cria a Lista blindada contra bugs visuais
+                ListBox lst = new ListBox();
+                lst.Dock = DockStyle.Fill;
+                lst.Font = new Font("Segoe UI", 11, FontStyle.Regular);
+                lst.ForeColor = Color.Black; // Força a letra a ser preta
+                lst.BackColor = Color.White; // Força o fundo a ser branco
+                lst.IntegralHeight = false;
+
+                // Preenche a lista com os animais repetidos
+                foreach (var row in linhas)
+                {
+                    string raca = row.Cells[Colunas.Raca].Value?.ToString() ?? "-";
+                    string cat = row.Cells[Colunas.Categoria].Value?.ToString() ?? "-";
+                    string lote = row.Cells[Colunas.Lote].Value?.ToString() ?? "-";
+
+                    lst.Items.Add($"Linha {row.Index + 1} | Raça: {raca} | Categoria: {cat} | Lote: {lote}");
+                }
+
+                // 4. Ordem de adição crucial para o layout não esconder a lista
+                formEscolha.Controls.Add(lst);
+                formEscolha.Controls.Add(lbl);
+                formEscolha.Controls.Add(btnOk);
+                lst.BringToFront(); // Puxa a lista para a frente de tudo
+
+                btnOk.Click += (s, e) => { formEscolha.DialogResult = DialogResult.OK; };
+
+                // Se o usuário clicou OK e selecionou algum item, retorna a linha correspondente
+                if (formEscolha.ShowDialog() == DialogResult.OK && lst.SelectedIndex != -1)
+                {
+                    return linhas[lst.SelectedIndex];
+                }
+                return null; // Retorna nulo se fechou a janela sem escolher
+            }
+        }
     }
 
     // =================================================================================
