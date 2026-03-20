@@ -21,11 +21,11 @@ namespace Pecuaria_Digital.Repositories
             {
                 // Linha 1 — metadados completos
                 sw.WriteLine(
-                    $"{Protocolo.PrefixoEstagio}{lote.MaiorEstagioAlcancado}" +
-                    $"{Protocolo.SeparadorCsv}" +
-                    (lote.ModoTabelaCompleta ? Protocolo.ModoCompleto : Protocolo.ModoEtapas) +
-                    $"{Protocolo.SeparadorCsv}FAZENDA:{lote.NomeFazenda}" +
-                    $"{Protocolo.SeparadorCsv}DATA:{lote.DataInicioInseminacao}");
+                    $"{ProtocoloConstants.PrefixoEstagio}{lote.MaiorEstagioAlcancado}" +
+                    $"{ProtocoloConstants.SeparadorCsv}" +
+                    (lote.ModoTabelaCompleta ? ProtocoloConstants.ModoCompleto : ProtocoloConstants.ModoEtapas) +
+                    $"{ProtocoloConstants.SeparadorCsv}FAZENDA:{lote.NomeFazenda}" +
+                    $"{ProtocoloConstants.SeparadorCsv}DATA:{lote.DataInicioInseminacao}");
 
                 // Linha 2: cabeçalho
                 sw.WriteLine(ObterCabecalho());
@@ -67,10 +67,10 @@ namespace Pecuaria_Digital.Repositories
         private void LerMetadados(string linha, LoteData lote)
         {
             if (!linha.ToUpper().StartsWith("ESTAGIO:")) return;
-            var partes = linha.Split(Protocolo.SeparadorCsv);
+            var partes = linha.Split(ProtocoloConstants.SeparadorCsv);
             lote.MaiorEstagioAlcancado = partes[0].Split(':')[1].Trim();
             lote.ModoTabelaCompleta = partes.Length > 1 &&
-                partes[1].ToUpper().Contains(Protocolo.ModoCompleto);
+                partes[1].ToUpper().Contains(ProtocoloConstants.ModoCompleto);
 
             foreach (var parte in partes)
             {
@@ -91,13 +91,13 @@ namespace Pecuaria_Digital.Repositories
             string.Join(";", new[]
             {
                 a.Id, a.Categoria, a.Raca, a.Ecc, a.Lote,
-                a.DataD0?.ToString(Protocolo.FormatoDataHora) ?? "",
+                a.DataD0?.ToString(ProtocoloConstants.FormatoDataHora) ?? "",
                 a.PerdeuImplante.ToString(), a.UsouEcg.ToString(),
-                a.DataD8?.ToString(Protocolo.FormatoDataHora) ?? "",
+                a.DataD8?.ToString(ProtocoloConstants.FormatoDataHora) ?? "",
                 a.EscoreCio, a.UsouGnrh.ToString(), a.Touro, a.Inseminador,
-                a.DataIATF?.ToString(Protocolo.FormatoDataHora) ?? "",
+                a.DataIATF?.ToString(ProtocoloConstants.FormatoDataHora) ?? "",
                 a.ResultadoDG, a.Ovario, a.Destino,
-                a.DataDG?.ToString(Protocolo.FormatoDataSimples) ?? "",
+                a.DataDG?.ToString(ProtocoloConstants.FormatoDataSimples) ?? "",
                 a.Observacoes.Replace(";", ",")
             });
 

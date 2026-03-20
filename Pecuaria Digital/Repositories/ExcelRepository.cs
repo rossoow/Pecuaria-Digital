@@ -20,11 +20,11 @@ namespace Pecuaria_Digital.Repositories
 
                 // Linha 1 — metadados
                 ws.Cell(1, 1).Value =
-                    $"{Protocolo.PrefixoEstagio}{lote.MaiorEstagioAlcancado}" +
-                    $"{Protocolo.SeparadorCsv}" +
-                    (lote.ModoTabelaCompleta ? Protocolo.ModoCompleto : Protocolo.ModoEtapas) +
-                    $"{Protocolo.SeparadorCsv}FAZENDA:{lote.NomeFazenda}" +
-                    $"{Protocolo.SeparadorCsv}DATA:{lote.DataInicioInseminacao}";
+                    $"{ProtocoloConstants.PrefixoEstagio}{lote.MaiorEstagioAlcancado}" +
+                    $"{ProtocoloConstants.SeparadorCsv}" +
+                    (lote.ModoTabelaCompleta ? ProtocoloConstants.ModoCompleto : ProtocoloConstants.ModoEtapas) +
+                    $"{ProtocoloConstants.SeparadorCsv}FAZENDA:{lote.NomeFazenda}" +
+                    $"{ProtocoloConstants.SeparadorCsv}DATA:{lote.DataInicioInseminacao}";
 
                 // Linha 2 — cabeçalho
                 string[] cabecalho = ObterCabecalho();
@@ -65,12 +65,12 @@ namespace Pecuaria_Digital.Repositories
                 string meta = ws.Cell(1, 1).GetValue<string>().Trim();
                 int linhaCabecalho = 1;
 
-                if (meta.ToUpper().StartsWith(Protocolo.PrefixoEstagio.ToUpper()))
+                if (meta.ToUpper().StartsWith(ProtocoloConstants.PrefixoEstagio.ToUpper()))
                 {
-                    var partes = meta.Split(Protocolo.SeparadorCsv);
+                    var partes = meta.Split(ProtocoloConstants.SeparadorCsv);
                     lote.MaiorEstagioAlcancado = partes[0].Split(':')[1].Trim();
                     lote.ModoTabelaCompleta = partes.Length > 1 &&
-                        partes[1].ToUpper().Contains(Protocolo.ModoCompleto);
+                        partes[1].ToUpper().Contains(ProtocoloConstants.ModoCompleto);
 
                     foreach (var parte in partes)
                     {
@@ -145,13 +145,13 @@ namespace Pecuaria_Digital.Repositories
         private string[] AnimalParaArray(Animal a) => new[]
         {
             a.Id, a.Categoria, a.Raca, a.Ecc, a.Lote,
-            a.DataD0?.ToString(Protocolo.FormatoDataHora)   ?? "",
+            a.DataD0?.ToString(ProtocoloConstants.FormatoDataHora)   ?? "",
             a.PerdeuImplante.ToString(), a.UsouEcg.ToString(),
-            a.DataD8?.ToString(Protocolo.FormatoDataHora)   ?? "",
+            a.DataD8?.ToString(ProtocoloConstants.FormatoDataHora)   ?? "",
             a.EscoreCio, a.UsouGnrh.ToString(), a.Touro, a.Inseminador,
-            a.DataIATF?.ToString(Protocolo.FormatoDataHora) ?? "",
+            a.DataIATF?.ToString(ProtocoloConstants.FormatoDataHora) ?? "",
             a.ResultadoDG, a.Ovario, a.Destino,
-            a.DataDG?.ToString(Protocolo.FormatoDataSimples) ?? "",
+            a.DataDG?.ToString(ProtocoloConstants.FormatoDataSimples) ?? "",
             a.Observacoes
         };
     }

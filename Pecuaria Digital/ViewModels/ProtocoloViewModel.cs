@@ -4,10 +4,20 @@ using Pecuaria_Digital.Repositories;
 using Pecuaria_Digital.Services;
 using System;
 using System.Windows.Forms;
-using static Pecuaria_Digital.FrmMenuTabela;
+using static Pecuaria_Digital.FrmMenuTabelas;
 
 namespace Pecuaria_Digital.ViewModels
 {
+    // --- Enumeração dos Estágios ---
+    public enum EstagioProtocolo
+    {
+        D0_Inicio,
+        D8_Retirada,
+        D10_IATF,
+        DG_Diagnostico,
+        Finalizado
+    }
+
     /// <summary>
     /// Gerencia o estado do protocolo e coordena os serviços.
     /// O Form só chama métodos deste ViewModel — nunca manipula estado diretamente.
@@ -20,11 +30,11 @@ namespace Pecuaria_Digital.ViewModels
         public string DataInicioInseminacao { get; private set; } = string.Empty;
         public string CaminhoArquivoAberto { get; private set; } = string.Empty;
 
-        public FrmMenuTabela.EstagioProtocolo EstagioAtual
-        { get; private set; } = FrmMenuTabela.EstagioProtocolo.D0_Inicio;
+        public EstagioProtocolo EstagioAtual
+        { get; private set; } = EstagioProtocolo.D0_Inicio;
 
-        public FrmMenuTabela.EstagioProtocolo MaiorEstagioAlcancado
-        { get; private set; } = FrmMenuTabela.EstagioProtocolo.D0_Inicio;
+        public EstagioProtocolo MaiorEstagioAlcancado
+        { get; private set; } = EstagioProtocolo.D0_Inicio;
 
         public bool ModoTabelaCompleta { get; private set; }
 
@@ -53,27 +63,13 @@ namespace Pecuaria_Digital.ViewModels
         /// <summary>Avança para o próximo estágio do protocolo.</summary>
         public bool TentarAvancar()
         {
-            if (EstagioAtual == FrmMenuTabela.EstagioProtocolo.DG_Diagnostico)
-            {
-                var resposta = MessageBox.Show(
-                    "Deseja concluir o protocolo reprodutivo?",
-                    "Concluir Protocolo",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                if (resposta == DialogResult.Yes)
-                {
-                    EstagioAtual = FrmMenuTabela.EstagioProtocolo.Finalizado;
-                    MaiorEstagioAlcancado = FrmMenuTabela.EstagioProtocolo.Finalizado;
-                    ModoTabelaCompleta = true;
-                    AppLogger.Acao("Protocolo", "Concluído: " + NomeFazenda);
-                    return true;
-                }
-                return false;
-            }
-
-            EstagioAtual = EstagioAtual + 1;
+            // Apenas muda o estágio — sem MessageBox
+            EstagioAtual++;
             if (EstagioAtual > MaiorEstagioAlcancado)
                 MaiorEstagioAlcancado = EstagioAtual;
+
+            if (EstagioAtual == EstagioProtocolo.Finalizado)
+                ModoTabelaCompleta = true;
 
             AppLogger.Acao("Estágio", $"Avançou para: {EstagioAtual}");
             return true;
@@ -81,7 +77,7 @@ namespace Pecuaria_Digital.ViewModels
 
         public void Voltar()
         {
-            if (EstagioAtual > FrmMenuTabela.EstagioProtocolo.D0_Inicio)
+            if (EstagioAtual > EstagioProtocolo.D0_Inicio)
             {
                 EstagioAtual--;
                 AppLogger.Acao("Estágio", $"Voltou para: {EstagioAtual}");

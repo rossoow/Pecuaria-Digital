@@ -1,7 +1,8 @@
+using Pecuaria_Digital.Logging;
 using Pecuaria_Digital.Repositories;
 using Pecuaria_Digital.Services;
 using Pecuaria_Digital.ViewModels;
-using Pecuaria_Digital.Logging;
+using Pecuaria_Digital.Views;
 
 namespace Pecuaria_Digital
 {
@@ -10,19 +11,20 @@ namespace Pecuaria_Digital
         [STAThread]
         static void Main()
         {
+            Application.ThreadException += (s, ex) =>
+            {
+                AppLogger.Erro("ThreadException não tratada", ex.Exception);
+                MessageBox.Show($"Erro inesperado:\n{ex.Exception.Message}\n\nDetalhes no log.",
+                    "Erro Crítico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
+
+            AppDomain.CurrentDomain.UnhandledException += (s, ex) =>
+                AppLogger.Erro("UnhandledException", ex.ExceptionObject as Exception);
+
             ApplicationConfiguration.Initialize();
-
-            
-
-            // --- Montagem das dependências (Composition Root) ---
-            var csvRepo = new CsvRepository();
-            var stats = new EstatisticasService();
-            var dateCalc = new DateCalculatorService();
-            var viewModel = new ProtocoloViewModel(csvRepo, stats, dateCalc);
-
             AppLogger.Info("Aplicativo iniciado");
-
-            Application.Run(new FrmMenuTabela(viewModel));
+            Application.Run(new FrmMenuFazendas());
+            AppLogger.Info("Aplicativo encerrado");
         }
     }
 }

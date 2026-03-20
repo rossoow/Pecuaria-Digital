@@ -8,7 +8,7 @@ namespace Pecuaria_Digital.Constants
     /// Centraliza os nomes das colunas do DataGridView.
     /// Use sempre estas constantes no lugar de strings literais.
     /// </summary>
-    public static class Colunas
+    public static class NomesColunasGrid
     {
         // Grupo 1 — Identidade
         public const string Id = "colId";

@@ -4,8 +4,9 @@ using System.Text;
 
 namespace Pecuaria_Digital.Constants
 {
-    public static class Protocolo
+    public static class ProtocoloConstants
     {
+        public const string PrefixoNomeFazenda = "Fazenda_";
         // Resultados do Diagnóstico de Gestação
         public const string ResultadoPrenha = "PRENHA";
         public const string ResultadoVazia = "VAZIA";
