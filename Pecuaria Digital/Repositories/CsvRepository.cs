@@ -67,17 +67,29 @@ namespace Pecuaria_Digital.Repositories
         private void LerMetadados(string linha, LoteData lote)
         {
             if (!linha.ToUpper().StartsWith("ESTAGIO:")) return;
+
             var partes = linha.Split(ProtocoloConstants.SeparadorCsv);
-            lote.MaiorEstagioAlcancado = partes[0].Split(':')[1].Trim();
+
+            // ✅ Corrigido — guard para Split sem valor
+            var segmentos = partes[0].Split(':');
+            lote.MaiorEstagioAlcancado = segmentos.Length > 1
+                ? segmentos[1].Trim()
+                : "D0_Inicio";
+
             lote.ModoTabelaCompleta = partes.Length > 1 &&
                 partes[1].ToUpper().Contains(ProtocoloConstants.ModoCompleto);
 
             foreach (var parte in partes)
             {
-                if (parte.ToUpper().StartsWith("FAZENDA:"))
-                    lote.NomeFazenda = parte.Split(':')[1].Trim();
-                if (parte.ToUpper().StartsWith("DATA:"))
-                    lote.DataInicioInseminacao = parte.Split(':')[1].Trim();
+                // ✅ Corrigido — mesmo guard aplicado aqui
+                var seg = parte.Split(':');
+                if (seg.Length < 2) continue;
+
+                string chave = seg[0].ToUpper().Trim();
+                string valor = seg[1].Trim();
+
+                if (chave == "FAZENDA") lote.NomeFazenda = valor;
+                if (chave == "DATA") lote.DataInicioInseminacao = valor;
             }
         }
 

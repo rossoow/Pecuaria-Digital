@@ -12,13 +12,15 @@ namespace Pecuaria_Digital.Services
         /// Valida os campos obrigatórios antes de inserir um animal.
         /// </summary>
         public static (bool Valido, string Mensagem) ValidarInsercaoAnimal(
-            string numero, string categoria, string raca)
+    string numero, string categoria, string raca)
         {
             if (string.IsNullOrWhiteSpace(numero))
                 return (false, "Número do brinco é obrigatório.");
 
-            if (!int.TryParse(numero.Trim(), out _))
-                return (false, "Número do brinco deve conter apenas dígitos.");
+            // ← REMOVIDA a exigência de ser numérico
+            // Brincos podem ter letras (ex: "A123", "BR-456")
+            if (numero.Trim().Length < 1)
+                return (false, "Número do brinco não pode ser vazio.");
 
             return (true, string.Empty);
         }

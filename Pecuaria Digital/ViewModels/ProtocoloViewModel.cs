@@ -29,6 +29,8 @@ namespace Pecuaria_Digital.ViewModels
         public string NomeFazenda { get; private set; } = string.Empty;
         public string DataInicioInseminacao { get; private set; } = string.Empty;
         public string CaminhoArquivoAberto { get; private set; } = string.Empty;
+        // Adicione junto com as outras propriedades no topo:
+        public string CaminhoPasta { get; private set; } = string.Empty;
 
         public EstagioProtocolo EstagioAtual
         { get; private set; } = EstagioProtocolo.D0_Inicio;
@@ -88,6 +90,7 @@ namespace Pecuaria_Digital.ViewModels
     bool modoCompleto, string dataInicio = null)
         {
             NomeFazenda = nomeFazenda?.Trim() ?? string.Empty;
+            CaminhoPasta = caminhoPasta ?? string.Empty;   // ← ADICIONAR
             DataInicioInseminacao = dataInicio ?? DateTime.Now.ToString("dd-MM-yyyy");
             ModoTabelaCompleta = modoCompleto;
             CaminhoArquivoAberto = string.Empty;
@@ -101,6 +104,11 @@ namespace Pecuaria_Digital.ViewModels
             }
 
             AppLogger.Acao("Lote configurado", $"Fazenda: {NomeFazenda}");
+        }
+
+        public void DefinirArquivoExistente(string caminho)
+        {
+            CaminhoArquivoAberto = caminho;
         }
 
         public void IrParaEstagio(EstagioProtocolo estagio)

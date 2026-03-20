@@ -22,7 +22,7 @@
         "Entry"
         {
         "MsmKey" = "8:_05C3E7721120662609DAA4FC5F46C4E9"
-        "OwnerKey" = "8:_82A89494BA2844118B354367A24BDBAE"
+        "OwnerKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -35,24 +35,6 @@
         {
         "MsmKey" = "8:_089E939BE75FD2F681997D037264B38B"
         "OwnerKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_101236FC64EB4B6FA7493CAC1A585C26"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_16824C749CE34ABEBC4095BA4CD54107"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_1F712574734948D8B7BF459FFBAE3685"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -76,30 +58,18 @@
         "Entry"
         {
         "MsmKey" = "8:_2C72F64854EDFF17246DD0C9C3BFC9D9"
-        "OwnerKey" = "8:_3EC9F38E46974D6EB829A12F179FF18A"
+        "OwnerKey" = "8:_DAE5D2D60F3F4B6C85485085B07D9D20"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_2C72F64854EDFF17246DD0C9C3BFC9D9"
-        "OwnerKey" = "8:_82A89494BA2844118B354367A24BDBAE"
+        "OwnerKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_347BC968302A4B678EDE06F7F856886F"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3EC9F38E46974D6EB829A12F179FF18A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_401D539A047F448D82C4BA14B6E4F30D"
+        "MsmKey" = "8:_3443F0CDB8EA4B729C61E3950EEA195E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -117,6 +87,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_4A198EB443C14BD09F923F1F7B76E9A7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_516569B4A37B4F809FB5861D26E1B894"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_5313EE36AB1E43AE888D9CA9A2C2762F"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
         "OwnerKey" = "8:_90DF79C88BDAB2215568F59B55455EA7"
         "MsmSig" = "8:_UNDEFINED"
@@ -124,19 +112,19 @@
         "Entry"
         {
         "MsmKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
-        "OwnerKey" = "8:_347BC968302A4B678EDE06F7F856886F"
+        "OwnerKey" = "8:_F81D1A3B5105475FB43902E1A3B31D4C"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
-        "OwnerKey" = "8:_16824C749CE34ABEBC4095BA4CD54107"
+        "OwnerKey" = "8:_E83F27CF92C44B4884B735D4EF0C58AB"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
-        "OwnerKey" = "8:_3EC9F38E46974D6EB829A12F179FF18A"
+        "OwnerKey" = "8:_DAE5D2D60F3F4B6C85485085B07D9D20"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -153,12 +141,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5934015FC790408AB70B47EA57CE5410"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_59EA82834F13A3A6EDF99C16317D29A2"
         "OwnerKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
         "MsmSig" = "8:_UNDEFINED"
@@ -166,13 +148,13 @@
         "Entry"
         {
         "MsmKey" = "8:_685CF252639E017F54FF5219E2443F28"
-        "OwnerKey" = "8:_A85A2556379E4432A7FB059FB6323BDD"
+        "OwnerKey" = "8:_DA7C61FEB5464B0F9DBFE3D499C646CF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6F85D37ABAB9396144D86CC9BA79D2E8"
-        "OwnerKey" = "8:_82A89494BA2844118B354367A24BDBAE"
+        "OwnerKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -195,32 +177,20 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_7D43B6C6EEDD45F6970E5AAE5C33B62A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_7F349E3F043641808DF20B603EEA34A3"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_82A89494BA2844118B354367A24BDBAE"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_843F3272BB09D42A7C560F3BC0F49E6D"
         "OwnerKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_8A8544B56E1448B6BB5E2C5D9095331A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_90DF79C88BDAB2215568F59B55455EA7"
-        "OwnerKey" = "8:_82A89494BA2844118B354367A24BDBAE"
+        "OwnerKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -237,7 +207,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_A85A2556379E4432A7FB059FB6323BDD"
+        "MsmKey" = "8:_95CCF870DD8540A3B54F0A11CC92E941"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -250,7 +226,7 @@
         "Entry"
         {
         "MsmKey" = "8:_B19323445345D39F82F8F0605E6F0E9A"
-        "OwnerKey" = "8:_82A89494BA2844118B354367A24BDBAE"
+        "OwnerKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -263,12 +239,6 @@
         {
         "MsmKey" = "8:_BBA1510261309EA3F8F3B8300D98D6F0"
         "OwnerKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_BC0471FBBE02487684A2190D36178543"
-        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -286,7 +256,7 @@
         "Entry"
         {
         "MsmKey" = "8:_D6DE08CA235482B28DEE784A5070D7C5"
-        "OwnerKey" = "8:_82A89494BA2844118B354367A24BDBAE"
+        "OwnerKey" = "8:_A576E2A2FEC24FAD9BE42E0E420C456E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -297,8 +267,38 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_DA7C61FEB5464B0F9DBFE3D499C646CF"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DAE5D2D60F3F4B6C85485085B07D9D20"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DF50F620FA01440CB98557C045F5C8EA"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E45B2E06E985410AB2935BFDBB14D39C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_E464A66728B7AC85AF1E2727BAE135FD"
         "OwnerKey" = "8:_55E82AADA4702E42B427CC188A7A1F49"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_E83F27CF92C44B4884B735D4EF0C58AB"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -310,13 +310,13 @@
         "Entry"
         {
         "MsmKey" = "8:_F32BE8B95A6E735A3889FA4BF00047CA"
-        "OwnerKey" = "8:_BC0471FBBE02487684A2190D36178543"
+        "OwnerKey" = "8:_DF50F620FA01440CB98557C045F5C8EA"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_F32BE8B95A6E735A3889FA4BF00047CA"
-        "OwnerKey" = "8:_3EC9F38E46974D6EB829A12F179FF18A"
+        "OwnerKey" = "8:_DAE5D2D60F3F4B6C85485085B07D9D20"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -333,7 +333,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F8940D774B3649148C57C06ECBCB631C"
+        "MsmKey" = "8:_F81D1A3B5105475FB43902E1A3B31D4C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -352,7 +352,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_A85A2556379E4432A7FB059FB6323BDD"
+        "OwnerKey" = "8:_DA7C61FEB5464B0F9DBFE3D499C646CF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -513,6 +513,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -636,99 +644,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_101236FC64EB4B6FA7493CAC1A585C26"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_101236FC64EB4B6FA7493CAC1A585C26"
-                    {
-                    "Name" = "8:ClosedXML.Parser.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\ClosedXML.Parser.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_16824C749CE34ABEBC4095BA4CD54107"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_16824C749CE34ABEBC4095BA4CD54107"
-                    {
-                    "Name" = "8:ExcelNumberFormat.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\ExcelNumberFormat.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_1F712574734948D8B7BF459FFBAE3685"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_1F712574734948D8B7BF459FFBAE3685"
-                    {
-                    "Name" = "8:SixLabors.Fonts.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\SixLabors.Fonts.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_223F156B2CFE0C3B27E3E465FD7DD234"
             {
             "AssemblyRegister" = "3:1"
@@ -791,69 +706,7 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_347BC968302A4B678EDE06F7F856886F"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_347BC968302A4B678EDE06F7F856886F"
-                    {
-                    "Name" = "8:RBush.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\RBush.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3EC9F38E46974D6EB829A12F179FF18A"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3EC9F38E46974D6EB829A12F179FF18A"
-                    {
-                    "Name" = "8:DocumentFormat.OpenXml.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\DocumentFormat.OpenXml.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_401D539A047F448D82C4BA14B6E4F30D"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3443F0CDB8EA4B729C61E3950EEA195E"
             {
             "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.deps.json"
             "TargetName" = "8:Pecuaria Digital.deps.json"
@@ -935,6 +788,99 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4A198EB443C14BD09F923F1F7B76E9A7"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:System.IO.Packaging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_4A198EB443C14BD09F923F1F7B76E9A7"
+                    {
+                    "Name" = "8:System.IO.Packaging.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\System.IO.Packaging.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_516569B4A37B4F809FB5861D26E1B894"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:SixLabors.Fonts, Version=1.0.0.0, Culture=neutral, PublicKeyToken=d998eea7b14cab13, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_516569B4A37B4F809FB5861D26E1B894"
+                    {
+                    "Name" = "8:SixLabors.Fonts.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\SixLabors.Fonts.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5313EE36AB1E43AE888D9CA9A2C2762F"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ClosedXML.Parser, Version=1.0.0.0, Culture=neutral, PublicKeyToken=1d5f7376574c51ec, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_5313EE36AB1E43AE888D9CA9A2C2762F"
+                    {
+                    "Name" = "8:ClosedXML.Parser.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\ClosedXML.Parser.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_55E82AADA4702E42B427CC188A7A1F49"
             {
             "AssemblyRegister" = "3:1"
@@ -964,26 +910,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5934015FC790408AB70B47EA57CE5410"
-            {
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.exe"
-            "TargetName" = "8:Pecuaria Digital.exe"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_59EA82834F13A3A6EDF99C16317D29A2"
@@ -1110,77 +1036,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7D43B6C6EEDD45F6970E5AAE5C33B62A"
-            {
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.runtimeconfig.json"
-            "TargetName" = "8:Pecuaria Digital.runtimeconfig.json"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7F349E3F043641808DF20B603EEA34A3"
-            {
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.pdb"
-            "TargetName" = "8:Pecuaria Digital.pdb"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_82A89494BA2844118B354367A24BDBAE"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ClosedXML, Version=0.105.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_82A89494BA2844118B354367A24BDBAE"
-                    {
-                    "Name" = "8:ClosedXML.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\ClosedXML.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_843F3272BB09D42A7C560F3BC0F49E6D"
             {
             "AssemblyRegister" = "3:1"
@@ -1210,6 +1065,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8A8544B56E1448B6BB5E2C5D9095331A"
+            {
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.exe"
+            "TargetName" = "8:Pecuaria Digital.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_90DF79C88BDAB2215568F59B55455EA7"
@@ -1274,20 +1149,40 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A85A2556379E4432A7FB059FB6323BDD"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_95CCF870DD8540A3B54F0A11CC92E941"
+            {
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.runtimeconfig.json"
+            "TargetName" = "8:Pecuaria Digital.runtimeconfig.json"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_A576E2A2FEC24FAD9BE42E0E420C456E"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Pecuaria Digital, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:ClosedXML, Version=0.105.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_A85A2556379E4432A7FB059FB6323BDD"
+                    "_A576E2A2FEC24FAD9BE42E0E420C456E"
                     {
-                    "Name" = "8:Pecuaria Digital.dll"
+                    "Name" = "8:ClosedXML.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.dll"
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\ClosedXML.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
@@ -1398,37 +1293,6 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_BC0471FBBE02487684A2190D36178543"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_BC0471FBBE02487684A2190D36178543"
-                    {
-                    "Name" = "8:DocumentFormat.OpenXml.Framework.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\DocumentFormat.OpenXml.Framework.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_CCEBCF898722EE8DEF839DAE003FB8BE"
             {
             "AssemblyRegister" = "3:1"
@@ -1522,6 +1386,119 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DA7C61FEB5464B0F9DBFE3D499C646CF"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:Pecuaria Digital, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DA7C61FEB5464B0F9DBFE3D499C646CF"
+                    {
+                    "Name" = "8:Pecuaria Digital.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DAE5D2D60F3F4B6C85485085B07D9D20"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DAE5D2D60F3F4B6C85485085B07D9D20"
+                    {
+                    "Name" = "8:DocumentFormat.OpenXml.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\DocumentFormat.OpenXml.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DF50F620FA01440CB98557C045F5C8EA"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DocumentFormat.OpenXml.Framework, Version=3.1.1.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_DF50F620FA01440CB98557C045F5C8EA"
+                    {
+                    "Name" = "8:DocumentFormat.OpenXml.Framework.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\DocumentFormat.OpenXml.Framework.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_E45B2E06E985410AB2935BFDBB14D39C"
+            {
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\Pecuaria Digital.pdb"
+            "TargetName" = "8:Pecuaria Digital.pdb"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E464A66728B7AC85AF1E2727BAE135FD"
             {
             "AssemblyRegister" = "3:1"
@@ -1551,6 +1528,37 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_E83F27CF92C44B4884B735D4EF0C58AB"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ExcelNumberFormat, Version=1.1.0.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_E83F27CF92C44B4884B735D4EF0C58AB"
+                    {
+                    "Name" = "8:ExcelNumberFormat.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\ExcelNumberFormat.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F32BE8B95A6E735A3889FA4BF00047CA"
@@ -1615,20 +1623,20 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F8940D774B3649148C57C06ECBCB631C"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F81D1A3B5105475FB43902E1A3B31D4C"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:System.IO.Packaging, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL"
+            "AssemblyAsmDisplayName" = "8:RBush, Version=4.0.0.0, Culture=neutral, PublicKeyToken=c77e27b81f4d0187, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_F8940D774B3649148C57C06ECBCB631C"
+                    "_F81D1A3B5105475FB43902E1A3B31D4C"
                     {
-                    "Name" = "8:System.IO.Packaging.dll"
+                    "Name" = "8:RBush.dll"
                     "Attributes" = "3:512"
                     }
                 }
-            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\System.IO.Packaging.dll"
+            "SourcePath" = "8:..\\Pecuaria Digital\\bin\\Release\\net6.0-windows7.0\\publish\\win-x86\\RBush.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
@@ -1734,7 +1742,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Pecuária Digital"
         "ProductCode" = "8:{7AD5F959-A4C1-4854-89CC-D73F7494E01F}"
-        "PackageCode" = "8:{74D1B661-986C-4F76-9C1F-4BACCB48BD91}"
+        "PackageCode" = "8:{93A94D21-743B-4C5B-AAB5-D598FACD52FA}"
         "UpgradeCode" = "8:{7950E83F-C794-4484-AF34-4255FA38EF37}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -1854,15 +1862,15 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_D9905CFA74744C3B8FA1D801943B0208"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_5EECF572DB00492EB73C87FE2A745868"
             {
-            "Name" = "8:Pecuaria Digital.exe"
+            "Name" = "8:Pecuaria Digital"
             "Arguments" = "8:"
             "Description" = "8:"
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_5934015FC790408AB70B47EA57CE5410"
+            "Target" = "8:_8A8544B56E1448B6BB5E2C5D9095331A"
             "Folder" = "8:_4CFF961ADC0041DBBA1CF2A761AA6762"
             "WorkingFolder" = "8:_B34DDDD3B9FB42D0A8B7E25137501972"
             "Icon" = "8:"

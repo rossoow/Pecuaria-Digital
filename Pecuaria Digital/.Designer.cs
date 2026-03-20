@@ -1,4 +1,0 @@
-﻿namespace Pecuaria_Digital
-{
-    
-}
