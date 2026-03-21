@@ -20,6 +20,8 @@ namespace Pecuaria_Digital.Services
         private const string CabecalhoDataDG = "DataDG";
         private const string CabecalhoResultado = "ResultadoDG";
 
+        private static readonly DateCentralService _dataSvc = new();
+
         public List<IatfResumo> GerarResumos(string caminhoPasta)
         {
             var repo = new FazendaRepository();
@@ -75,14 +77,21 @@ namespace Pecuaria_Digital.Services
             var datasIATF = ExtrairDatas(linhas, cab, colIATF).ToList();
             var datasDG = ExtrairDatas(linhas, cab, colDG).ToList();
 
-            resumo.DataInicio = datasD0.Any()
-                ? new DateTime((long)datasD0.Average(d => d.Ticks)) : default;
-            resumo.DataD8Media = datasD8.Any()
-                ? new DateTime((long)datasD8.Average(d => d.Ticks)) : default;
-            resumo.DataIATFMedia = datasIATF.Any()
-                ? new DateTime((long)datasIATF.Average(d => d.Ticks)) : default;
-            resumo.DataFim = datasDG.Any()
-                ? new DateTime((long)datasDG.Average(d => d.Ticks)) : default;
+            // ← USA O SERVIÇO CENTRALIZADO
+            var datas = _dataSvc.Calcular(datasD0, datasD8, datasIATF, datasDG);
+
+            resumo.DataInicio = datas.MediaD0 ?? default;
+            resumo.DataD8Media = datas.MediaD8 ?? default;
+            resumo.DataIATFMedia = datas.MediaIATF ?? default;
+            resumo.DataFim = datas.MediaDG ?? default;
+
+            resumo.DataD8Estimada = datas.EstimativaD8 ?? default;
+            resumo.DataIATFEstimada = datas.EstimativaIATF ?? default;
+            resumo.DataFimEstimada = datas.EstimativaDG ?? default;
+
+            resumo.DataD8EhEstimativa = datas.D8EhEstimativa;
+            resumo.DataIATFEhEstimativa = datas.IATFEhEstimativa;
+            resumo.DataFimEhEstimativa = datas.DGEhEstimativa;
 
             // ── Calcula estimativas pela etapa mais avançada ──────────────────
             // Base para estimativa = média da etapa mais avançada com dados

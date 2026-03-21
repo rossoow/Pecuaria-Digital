@@ -818,7 +818,13 @@ namespace Pecuaria_Digital
             tabela.CurrentCellDirtyStateChanged += (s, e) =>
             {
                 if (tabela.CurrentCell is DataGridViewCheckBoxCell)
-                    tabela.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                {
+                    BeginInvoke(new Action(() =>
+                    {
+                        if (!tabela.IsDisposed)
+                            tabela.CommitEdit(DataGridViewDataErrorContexts.Commit);
+                    }));
+                }
             };
 
             // Desativa ordenação automática
@@ -1081,87 +1087,70 @@ namespace Pecuaria_Digital
 
         private void CalcularTodasMedias()
         {
-            long ticksD0 = 0, ticksD8 = 0, ticksIATF = 0, ticksDG = 0;
-            int countD0 = 0, countD8 = 0, countIATF = 0, countDG = 0;
+            // Coleta datas reais da tabela
+            var datasD0 = new List<DateTime>();
+            var datasD8 = new List<DateTime>();
+            var datasIATF = new List<DateTime>();
+            var datasDG = new List<DateTime>();
 
             foreach (DataGridViewRow linha in tabela.Rows)
             {
                 if (linha.IsNewRow || !linha.Visible) continue;
-                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataD0].Value?.ToString(), out DateTime d0)) { ticksD0 += d0.Ticks; countD0++; }
-                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataD8].Value?.ToString(), out DateTime d8)) { ticksD8 += d8.Ticks; countD8++; }
-                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataIATF].Value?.ToString(), out DateTime iatf)) { ticksIATF += iatf.Ticks; countIATF++; }
-                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataDG].Value?.ToString(), out DateTime dg)) { ticksDG += dg.Ticks; countDG++; }
+
+                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataD0].Value?.ToString(),
+                    out DateTime d0)) datasD0.Add(d0);
+                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataD8].Value?.ToString(),
+                    out DateTime d8)) datasD8.Add(d8);
+                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataIATF].Value?.ToString(),
+                    out DateTime iatf)) datasIATF.Add(iatf);
+                if (DateTime.TryParse(linha.Cells[NomesColunasGrid.DataDG].Value?.ToString(),
+                    out DateTime dg)) datasDG.Add(dg);
             }
 
-            // Médias reais de cada etapa (null se não há dados)
-            DateTime? mediaD0 = countD0 > 0 ? new DateTime(ticksD0 / countD0) : (DateTime?)null;
-            DateTime? mediaD8 = countD8 > 0 ? new DateTime(ticksD8 / countD8) : (DateTime?)null;
-            DateTime? mediaIATF = countIATF > 0 ? new DateTime(ticksIATF / countIATF) : (DateTime?)null;
+            // ← SERVIÇO CENTRALIZADO faz todo o cálculo
+            var svc = new DateCentralService();
+            var datas = svc.Calcular(datasD0, datasD8, datasIATF, datasDG);
 
-            // =========================================================
-            // PREVISÕES: cada etapa usa a base mais recente disponível
-            // Prioridade: dado real da etapa anterior > calcular da anterior
-            // =========================================================
-
-            // Previsão D8: baseada na média real do D0 da tabela
-            DateTime? previsaoD8 = mediaD0.HasValue
-                ? _dateCalc.CalcularD8(mediaD0.Value)
-                : (DateTime?)null;
-
-            // Previsão IATF:
-            // — Se já há dados de D8 na tabela → usa média real do D8
-            // — Senão, se há dados de D0 → usa a previsão do D8
-            DateTime? previsaoIATF = mediaD8.HasValue
-                ? _dateCalc.CalcularIATF(mediaD8.Value)
-                : previsaoD8.HasValue
-                    ? _dateCalc.CalcularIATF(previsaoD8.Value)
-                    : (DateTime?)null;
-
-            // Previsão DG:
-            // — Se já há dados de IATF na tabela → usa média real do IATF
-            // — Senão, se há previsão de IATF → usa ela
-            DateTime? previsaoDG = mediaIATF.HasValue
-                ? _dateCalc.CalcularDG(mediaIATF.Value)
-                : previsaoIATF.HasValue
-                    ? _dateCalc.CalcularDG(previsaoIATF.Value)
-                    : (DateTime?)null;
-
-            AtualizarLabelMedia(lblMediaD0, "D0", ticksD0, countD0, EstagioProtocolo.D0_Inicio, null);
-            AtualizarLabelMedia(lblMediaD8, "D8", ticksD8, countD8, EstagioProtocolo.D8_Retirada, previsaoD8);
-            AtualizarLabelMedia(lblMediaIATF, "IATF", ticksIATF, countIATF, EstagioProtocolo.D10_IATF, previsaoIATF);
-            AtualizarLabelMedia(lblMediaDG, "DG", ticksDG, countDG, EstagioProtocolo.DG_Diagnostico, previsaoDG);
+            // Atualiza os labels do painel Datas
+            AtualizarLabelMedia(lblMediaD0, "D0", datas.D0Exibida, ehEstimativa: false);
+            AtualizarLabelMedia(lblMediaD8, "D8", datas.D8Exibida, datas.D8EhEstimativa);
+            AtualizarLabelMedia(lblMediaIATF, "IATF", datas.IATFExibida, datas.IATFEhEstimativa);
+            AtualizarLabelMedia(lblMediaDG, "DG", datas.DGExibida, datas.DGEhEstimativa);
         }
 
-        private void AtualizarLabelMedia(Label lbl, string titulo, long totalTicks, int count,
-    EstagioProtocolo estagioDaLabel, DateTime? previsao)
+        private void AtualizarLabelMedia(Label lbl, string titulo,
+            DateTime? data, bool ehEstimativa)
         {
-            if (count > 0)
-            {
-                // Tem dados reais na tabela — mostra a média
-                DateTime dataMedia = new DateTime(totalTicks / count);
-                lbl.Text = $"{titulo}: {dataMedia:dd/MM HH:mm}";
-
-                if (estagioDaLabel <= _viewModel.EstagioAtual)
-                    lbl.ForeColor = Color.Black;
-                else
-                {
-                    DateTime hoje = DateTime.Now.Date;
-                    if (dataMedia.Date < hoje) lbl.ForeColor = Color.Red;
-                    else if (dataMedia.Date == hoje) lbl.ForeColor = Color.OrangeRed;
-                    else lbl.ForeColor = Color.Green;
-                }
-            }
-            else if (previsao.HasValue)
-            {
-                // Sem dados ainda — mostra a previsão do DatePicker
-                lbl.Text = $"{titulo}: {previsao.Value:dd/MM HH:mm} (prev.)";
-                lbl.ForeColor = Color.Blue;
-            }
-            else
+            if (!data.HasValue || data == default(DateTime))
             {
                 lbl.Text = $"{titulo}: -";
                 lbl.ForeColor = Color.Gray;
+                lbl.Font = new Font(lbl.Font, FontStyle.Regular);
+                return;
             }
+
+            if (!ehEstimativa)
+            {
+                // Data real → preto, sem sufixo
+                lbl.Text = $"{titulo}: {data.Value:dd/MM HH:mm}";
+                lbl.ForeColor = Color.Black;
+                lbl.Font = new Font(lbl.Font, FontStyle.Regular);
+                return;
+            }
+
+            // Data estimada → colorida conforme classificação
+            var classificacao = DateCentralService.Classificar(data.Value);
+
+            lbl.Text = $"{titulo}: {data.Value:dd/MM HH:mm} *";
+            lbl.Font = new Font(lbl.Font, FontStyle.Regular);
+
+            lbl.ForeColor = classificacao switch
+            {
+                DateCentralService.ClassificacaoData.EmDia => Color.Green,
+                DateCentralService.ClassificacaoData.DiaIdeal => Color.DarkGoldenrod,
+                DateCentralService.ClassificacaoData.Atrasado => Color.Red,
+                _ => Color.Gray
+            };
         }
 
         // Lógica de Datas nos DatePickers
@@ -1904,45 +1893,61 @@ namespace Pecuaria_Digital
         /// </summary>
         private void PopularTabelaDoLoteData(LoteData lote)
         {
-            tabela.Rows.Clear();
+            // ← Ativa a trava antes de popular — impede CellValueChanged durante carga
+            _sistemaEstaOcupado = true;
+            tabela.SuspendLayout();
 
-            foreach (var animal in lote.Animais)
+            try
             {
-                int index = tabela.Rows.Add();
-                var linha = tabela.Rows[index];
+                tabela.Rows.Clear();
 
-                void S(string col, object val) { if (val != null) linha.Cells[col].Value = val; }
+                foreach (var animal in lote.Animais)
+                {
+                    int index = tabela.Rows.Add();
+                    var linha = tabela.Rows[index];
 
-                S(NomesColunasGrid.Id, animal.Id);
-                S(NomesColunasGrid.Categoria, animal.Categoria);
-                S(NomesColunasGrid.Raca, animal.Raca);
-                S(NomesColunasGrid.Ecc, animal.Ecc);
-                S(NomesColunasGrid.Lote, animal.Lote);
-                S(NomesColunasGrid.Obs, animal.Observacoes);
-                S(NomesColunasGrid.PerdeuImplante, animal.PerdeuImplante);
-                S(NomesColunasGrid.Ecg, animal.UsouEcg);
-                S(NomesColunasGrid.EscoreCio, animal.EscoreCio);
-                S(NomesColunasGrid.Gnrh, animal.UsouGnrh);
-                S(NomesColunasGrid.Touro, animal.Touro);
-                S(NomesColunasGrid.Inseminador, animal.Inseminador);
-                S(NomesColunasGrid.ResultadoDG, animal.ResultadoDG);
-                S(NomesColunasGrid.Ovario, animal.Ovario);
-                S(NomesColunasGrid.Destino, animal.Destino);
+                    void S(string col, object val)
+                    { if (val != null) linha.Cells[col].Value = val; }
 
-                if (animal.DataD0.HasValue)
-                    S(NomesColunasGrid.DataD0, animal.DataD0.Value.ToString(ProtocoloConstants.FormatoDataHora));
-                if (animal.DataD8.HasValue)
-                    S(NomesColunasGrid.DataD8, animal.DataD8.Value.ToString(ProtocoloConstants.FormatoDataHora));
-                if (animal.DataIATF.HasValue)
-                    S(NomesColunasGrid.DataIATF, animal.DataIATF.Value.ToString(ProtocoloConstants.FormatoDataHora));
-                if (animal.DataDG.HasValue)
-                    S(NomesColunasGrid.DataDG, animal.DataDG.Value.ToString(ProtocoloConstants.FormatoDataSimples));
+                    S(NomesColunasGrid.Id, animal.Id);
+                    S(NomesColunasGrid.Categoria, animal.Categoria);
+                    S(NomesColunasGrid.Raca, animal.Raca);
+                    S(NomesColunasGrid.Ecc, animal.Ecc);
+                    S(NomesColunasGrid.Lote, animal.Lote);
+                    S(NomesColunasGrid.Obs, animal.Observacoes);
+                    S(NomesColunasGrid.PerdeuImplante, animal.PerdeuImplante);
+                    S(NomesColunasGrid.Ecg, animal.UsouEcg);
+                    S(NomesColunasGrid.EscoreCio, animal.EscoreCio);
+                    S(NomesColunasGrid.Gnrh, animal.UsouGnrh);
+                    S(NomesColunasGrid.Touro, animal.Touro);
+                    S(NomesColunasGrid.Inseminador, animal.Inseminador);
+                    S(NomesColunasGrid.ResultadoDG, animal.ResultadoDG);
+                    S(NomesColunasGrid.Ovario, animal.Ovario);
+                    S(NomesColunasGrid.Destino, animal.Destino);
 
-                // Reensina os combos com os valores carregados
-                AprenderNovaOpcao(NomesColunasGrid.Raca, animal.Raca, _raca);
-                AprenderNovaOpcao(NomesColunasGrid.Categoria, animal.Categoria, _categoria);
-                AprenderNovaOpcao(NomesColunasGrid.Touro, animal.Touro, _touro);
-                AprenderNovaOpcao(NomesColunasGrid.Inseminador, animal.Inseminador, _inseminador);
+                    if (animal.DataD0.HasValue)
+                        S(NomesColunasGrid.DataD0,
+                            animal.DataD0.Value.ToString(ProtocoloConstants.FormatoDataHora));
+                    if (animal.DataD8.HasValue)
+                        S(NomesColunasGrid.DataD8,
+                            animal.DataD8.Value.ToString(ProtocoloConstants.FormatoDataHora));
+                    if (animal.DataIATF.HasValue)
+                        S(NomesColunasGrid.DataIATF,
+                            animal.DataIATF.Value.ToString(ProtocoloConstants.FormatoDataHora));
+                    if (animal.DataDG.HasValue)
+                        S(NomesColunasGrid.DataDG,
+                            animal.DataDG.Value.ToString(ProtocoloConstants.FormatoDataSimples));
+
+                    AprenderNovaOpcao(NomesColunasGrid.Raca, animal.Raca, _raca);
+                    AprenderNovaOpcao(NomesColunasGrid.Categoria, animal.Categoria, _categoria);
+                    AprenderNovaOpcao(NomesColunasGrid.Touro, animal.Touro, _touro);
+                    AprenderNovaOpcao(NomesColunasGrid.Inseminador, animal.Inseminador, _inseminador);
+                }
+            }
+            finally
+            {
+                _sistemaEstaOcupado = false;  // ← Destrava após popular
+                tabela.ResumeLayout();
             }
         }
         #endregion
@@ -2190,7 +2195,7 @@ namespace Pecuaria_Digital
         private void tabela_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             if (_processandoCellValueChanged) return;
-            if (_sistemaEstaOcupado) return;
+            if (_sistemaEstaOcupado) return;          
             if (e.RowIndex < 0) return;
 
             _processandoCellValueChanged = true;

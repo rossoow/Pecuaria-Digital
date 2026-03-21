@@ -187,15 +187,16 @@ namespace Pecuaria_Digital.Views
 
             string col = gridProtocolos.Columns[e.ColumnIndex].Name;
 
-            // DataInicio (D0) → sempre preto
+            // DataInicio (D0) → sempre preto, sem formatação especial
             if (col == "colDataInicio")
             {
                 e.CellStyle.ForeColor = Color.Black;
                 e.CellStyle.SelectionForeColor = Color.Black;
+                e.CellStyle.Font = new Font(gridProtocolos.Font, FontStyle.Regular);
                 return;
             }
 
-            // D8, IATF, DataFim → cor baseada em estimativa vs real e prazo
+            // Mapeia coluna → (data exibida, é estimativa)
             bool ehEstimativa;
             DateTime dataExibida;
 
@@ -219,33 +220,26 @@ namespace Pecuaria_Digital.Views
 
             if (dataExibida == default) return;
 
-            // Finalizado → preto (data real)
             if (!ehEstimativa)
             {
+                // Real → preto normal
                 e.CellStyle.ForeColor = Color.Black;
                 e.CellStyle.SelectionForeColor = Color.Black;
+                e.CellStyle.Font = new Font(gridProtocolos.Font, FontStyle.Regular);
                 return;
             }
 
-            // Estimativa → cor por prazo
-            var hoje = DateTime.Now.Date;
-            var prazo = dataExibida.Date;
+            // Estimativa → negrito + cor por classificação
+            e.CellStyle.Font = new Font(gridProtocolos.Font, FontStyle.Bold);
 
-            if (prazo > hoje)
+            var classificacao = DateCentralService.Classificar(dataExibida);
+            e.CellStyle.ForeColor = e.CellStyle.SelectionForeColor = classificacao switch
             {
-                e.CellStyle.ForeColor = Color.RoyalBlue;   // futuro
-                e.CellStyle.SelectionForeColor = Color.RoyalBlue;
-            }
-            else if (prazo == hoje)
-            {
-                e.CellStyle.ForeColor = Color.DarkGoldenrod; // hoje
-                e.CellStyle.SelectionForeColor = Color.DarkGoldenrod;
-            }
-            else
-            {
-                e.CellStyle.ForeColor = Color.Red;  // atrasado
-                e.CellStyle.SelectionForeColor = Color.Red;
-            }
+                DateCentralService.ClassificacaoData.EmDia => Color.RoyalBlue,
+                DateCentralService.ClassificacaoData.DiaIdeal => Color.DarkGoldenrod,
+                DateCentralService.ClassificacaoData.Atrasado => Color.Red,
+                _ => Color.Gray
+            };
         }
 
         private void PopularGrid()
@@ -293,11 +287,11 @@ namespace Pecuaria_Digital.Views
 
         private static Color CorDoStatus(StatusIatf status) => status switch
         {
-            StatusIatf.Futuro => CorFuturo,
-            StatusIatf.DiaIdeal => CorDiaIdeal,
-            StatusIatf.EmDia => CorEmDia,
-            StatusIatf.Atrasado => CorAtrasado,
-            StatusIatf.Finalizado => CorFinalizado,
+            StatusIatf.Futuro => Color.FromArgb(198, 239, 206),  // verde claro
+            StatusIatf.DiaIdeal => Color.FromArgb(255, 235, 156),  // amarelo
+            StatusIatf.EmDia => Color.FromArgb(198, 239, 206),  // verde claro
+            StatusIatf.Atrasado => Color.FromArgb(255, 199, 206),  // vermelho claro
+            StatusIatf.Finalizado => Color.FromArgb(230, 230, 230),  // cinza
             _ => Color.White
         };
 

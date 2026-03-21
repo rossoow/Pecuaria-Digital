@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Pecuaria_Digital.Services;
+using System.Collections.Generic;
+using Pecuaria_Digital.Services;
 
 namespace Pecuaria_Digital.Models
 {
@@ -53,18 +55,25 @@ namespace Pecuaria_Digital.Models
             get
             {
                 if (Finalizado) return StatusIatf.Finalizado;
+                if (EstagioAtual == "COMPLETA") return StatusIatf.Futuro; // completa tem status próprio
 
-                // Tabelas completas nunca são Finalizado — usam estimativa
-                var dataRef = DataFimExibida;
-                if (dataRef == default) return StatusIatf.Futuro;
+                // Usa a próxima data estimada pendente
+                var proximaEstimada = DataD8EhEstimativa ? DataD8Exibida
+                                    : DataIATFEhEstimativa ? DataIATFExibida
+                                    : DataFimEhEstimativa ? DataFimExibida
+                                    : (DateTime?)null;
 
-                var hoje = System.DateTime.Now.Date;
-                var prazo = dataRef.Date;
+                if (proximaEstimada == null || proximaEstimada == default(DateTime))
+                    return StatusIatf.Futuro;
 
-                if (prazo < hoje) return StatusIatf.Atrasado;
-                if (prazo == hoje) return StatusIatf.DiaIdeal;
-                if (prazo <= hoje.AddDays(2)) return StatusIatf.EmDia;
-                return StatusIatf.Futuro;
+                var classificacao = DateCentralService.Classificar(proximaEstimada.Value);
+                return classificacao switch
+                {
+                    DateCentralService.ClassificacaoData.EmDia => StatusIatf.EmDia,
+                    DateCentralService.ClassificacaoData.DiaIdeal => StatusIatf.DiaIdeal,
+                    DateCentralService.ClassificacaoData.Atrasado => StatusIatf.Atrasado,
+                    _ => StatusIatf.Futuro
+                };
             }
         }
     }
